@@ -1,0 +1,46 @@
+±»²â´úÂë£º
+package firstjunit;
+
+public class Largest {
+	public static int largest(int[] list){
+		int index,max = Integer.MAX_VALUE;
+		for (index = 0; index < list.length-1; index++) {
+			if(list[index]>max) {
+				max = list[index];
+			}
+		}
+		return max;
+	}                                                                                                                                                                                                                                                                                                                                                           
+}
+
+
+
+
+²âÊÔ´úÂë£º
+package firstjunit;
+
+import junit.framework.*;
+
+public class TestLargest extends TestCase {
+	public TestLargest(String name) {
+		super(name);
+	}
+	
+	public void testSimple() {
+		assertEquals(9, Largest.largest(new int[]{9,7,8}));
+	}
+}
+
+
+
+assertEquals(9, Largest.largest(new int[]{7,8,9}));
+assertEquals(9, Largest.largest(new int[]{8,9,7}));
+assertEquals(9, Largest.largest(new int[]{9,7,8}));
+assertEquals(9, Largest.largest(new int[]{7,9,8,9}));
+assertEquals(1, Largest.largest(new int[]{1}));	
+assertEquals(-7, Largest.largest(new int[]{-9,-8,-7}));
+assertEquals(1, Largest.largest(new int[]{}));
+
+if(list.length==0){
+	throw new RuntimeException("Empty list");
+}
